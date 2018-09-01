@@ -3,17 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-    {% if details %}
-    {% for user in details%}
-    <div>
-      <h3>USER INFO:</h3>
-      <p>FirstName: {{ user.FirstName }}</p>
-      <p>LastName: {{ user.LastName }}</p>
-      <p>Email: {{ user.Email }}</p>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>Please sign up here</h2>
+        <form action="index.html" method="POST">
+          {{ form }}
+          {% csrf_token %}
+          <input type="submit" class="btn btn-primary" value="submit">
+        </form>
+      </div>
+
     </div>
-    {% endfor %}
-    {% endif %}
+
   </body>
 </html>
